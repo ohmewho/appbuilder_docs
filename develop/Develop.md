@@ -9,4 +9,6 @@ Here is how you can start developing on the AppBuilder today:
 
 + [TODO: Contributing to a project](develop_contribute.md)
 
++ [Concepts: How things work](concepts/Concepts.md)
+
 + [TODO: Developer Tutorials to get you started](devTutorials/DevTutorials.md)
