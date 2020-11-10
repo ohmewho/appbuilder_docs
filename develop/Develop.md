@@ -1,14 +1,16 @@
 [< Overview](../README.md)
+
 # Developers
 
-Here is how you can start developing on the AppBuilder today:
+**Setup**\
+[Install and setup your environment](setup/Setup.md) \
+([old setup instructions](setup/oldSetup/Setup.md))
 
-+ [install and setup your environment](setup/Setup.md)
+**Core Concepts**\
+[Concepts: How things work](concepts/Concepts.md)
 
-+ [TODO: Error reporting](develop_errors.md)
+**Mobile Framework**\
+[Mobile](mobile/Mobile.md)
 
-+ [TODO: Contributing to a project](develop_contribute.md)
-
-+ [Concepts: How things work](concepts/Concepts.md)
-
-+ [TODO: Developer Tutorials to get you started](devTutorials/DevTutorials.md)
+**Testing**\
+[End-to-End Testing Guide](testing/guide/TestingGuide.md)
