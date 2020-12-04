@@ -14,3 +14,6 @@
 
 **Testing**\
 [End-to-End Testing Guide](testing/guide/TestingGuide.md)
+
+**Standards**\
+[Versions and Releases](standards/releases/Releases.md)

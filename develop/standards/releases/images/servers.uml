@@ -1,0 +1,31 @@
+@startuml
+Rectangle prod #LightSeaGreen [
+<b>Production</b>
+Stable Release with Patches
+ex. 1.7.0.1
+
+---
+For Live Apps. Might stay on an older
+release until the Apps are updated.
+]
+rectangle stage #LightSeaGreen [
+<b>Staging</b>
+Current or Next production version
+ex. 1.8.0.0
+
+---
+Test changes (to apps or code) with a
+clone of the production database.
+]
+rectangle dev #AquaMarine [
+<b>Dev</b>
+Latest release
+ex. 1.8.15.0
+
+---
+Build new apps or add new features to
+existing apps.
+]
+prod -[hidden]r-> stage
+stage -[hidden]r-> dev
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+card v #GhostWhite [
+<b> 1 . 8 . 22 . 1 </b>
+]
+card major #MediumSeaGreen [
+<b>Major Release</b>
+Major or Breaking changes
+]
+card minor #LightSeaGreen[
+<b>Minor Release</b>
+Minor, non-breaking changes
+]
+card build #AquaMarine[
+<b>Build</b>
+Any change to #master
+]
+card patch #pink [
+<b>Patch</b>
+For bug fixes
+]
+v --> major
+v --> minor
+v --> build
+v --> patch
+@enduml
