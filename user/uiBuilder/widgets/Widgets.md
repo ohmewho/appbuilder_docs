@@ -21,5 +21,6 @@
 [List](list/List.md)\
 [Menu](menu/Menu.md)\
 [Pivot](pivot/Pivot.md)\
+[Report Manager](reportManager/ReportManager.md)\
 [Tab](tab/Tab.md)\
 [Text](text/Text.md)
