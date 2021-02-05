@@ -12,6 +12,7 @@
 [Detail](detail/Detail.md)\
 [Docx Builder](docx/Docx.md)\
 [Form](form/Form.md)\
+[Gantt](gantt/Gantt.md)\
 [Grid](grid/Grid.md)\
 [Image](image/Image.md)\
 [Kanban](kanban/Kanban.md)\
