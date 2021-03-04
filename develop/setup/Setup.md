@@ -91,7 +91,7 @@ appbuilder install {install_dir} --develop --V1
 **Option Definitions**
 
 - `--develop`: executes git clone commands to bring down the source code
-- `--V1`: ???
+- `--V1`: this refers to the version of AppBuilder that is currently being used as of March 2021
 
 **Recommended Settings**
 
