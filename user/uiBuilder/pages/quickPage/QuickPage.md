@@ -1,5 +1,7 @@
-[< Pages](../Pages.md)
-
+---
+category: ui
+title: Quick Page
+---
 # Quick Page
 
 The quick page feature creates a set of linked pages, with preconfigured widgets. This is best used to create a grid with linked detail and edit page.
