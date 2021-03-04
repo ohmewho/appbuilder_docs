@@ -1,0 +1,12 @@
+plugins:
+  - jekyll-relative-links
+  - kramdown-parser-gfm
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+  - CONTRIBUTING.md
+remote_theme: chrisrhymes/bulma-clean-theme
+fixed_navbar: top
+title: AppBuider Docs

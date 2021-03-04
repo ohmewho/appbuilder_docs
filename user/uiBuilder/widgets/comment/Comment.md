@@ -1,6 +1,7 @@
-[< Widgets](../Widgets.md)
-
-# Comment
+---
+category: widgets
+title: Comment
+---
 
 This widget adds a comment section to a page. User read comments and add their own thoughts.
 

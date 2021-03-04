@@ -1,10 +1,11 @@
-[< Mobile](../Mobile.md)
-# Mobile Framework: Framework Objects and Local Data
-
-
+---
+title: Mobile Framework
+description: Framework Objects and Local Data
+category: mobile
+---
 ## Overview
 
-AppBuilder data can be accessed on the Cordova mobile app through the `ABObject` and `ABDataCollection` classes. These classes know how to request data from the server through the ABRelay system and then store their respective info into the device's local storage. 
+AppBuilder data can be accessed on the Cordova mobile app through the `ABObject` and `ABDataCollection` classes. These classes know how to request data from the server through the ABRelay system and then store their respective info into the device's local storage.
 
 An ABObject on the mobile framework represents an AppBuilder Object on the server. Each ABObject knows how to take its local data out of storage, and then later push any changes to it back to the server. (Storage is handled locally on the mobile device by an encrypted asynchronous key-value system with an SQLite back end. It is distinct from `localStorage`, which is a plaintext synchronous key-value system native to JavaScript.)
 
@@ -13,7 +14,7 @@ An ABDataCollection is usually an ABObject with a filter applied, but it can als
 Every ABObject and ABDataCollection item has a unique ID. You will need to know these IDs to use them in the mobile framework. The way to find out their IDs is by manually searching through the ABApplication's JSON text field in the server's database.
 
 
-#### Terminology
+### Terminology
 
 We might sometimes refer to things here with names that normally mean something else in a different context.
 
@@ -52,9 +53,9 @@ Framework7 is a JavaScript based framework and UI library for mobile apps. We ma
 <template>
     <div class="page">
         <div class="page-content">
-            {{#if showMessage}}
+            {% raw %}{{#if showMessage}}
                 <p>{{message}}</p>
-            {{/if}}
+            {% raw %}{{/if}}{% endraw %}
         </div>
     </div>
 </template>
@@ -67,16 +68,16 @@ Framework7 is a JavaScript based framework and UI library for mobile apps. We ma
                 message: "Hello World"
             }
         },
-        
+
         on: {
             pageInit: function() {
                 ...
             },
-            
+
             pageBeforeIn: function() {
                 ...
             },
-            
+
             pageBeforeRemove: function() {
                 ...
             }
@@ -85,7 +86,7 @@ Framework7 is a JavaScript based framework and UI library for mobile apps. We ma
 </script>
 ```
 
-#### No Async
+### No Async
 
 The Framework7 component `<template>` populates the page's data from the `data()` function in the `<script>` section. However, this function must return its value synchronously, async operations will not work for this. So we need to make sure all the AppBuilder data is ready before the Framework7 page even starts to load.  We achieve this by preventing the user from viewing the page until the data is ready. In the page's `on.pageAfterIn()` function, we check the state of the ABApplication to see if the data is ready or not. If not, we reroute to a different page until the data has fully downloaded.
 ```javascript
@@ -100,7 +101,7 @@ pageAfterIn: function() {
 },
 ```
 
-#### No Imports
+### No Imports
 
 Another limitation of Framework7 component scripts is they cannot import external libraries on their own. Still, they do have access to anything that is global, and a bunch of useful stuff is also available through the `this` object. You may be wondering about `this.$root`. This refers to data that was passed in when initializing Framework7. Somewhere in the `appPage.js` contructor, you will find something a bit like this, where the `data` parameter is passed in:
 
@@ -131,13 +132,13 @@ That is how we bring the ABMobileApp, ABApplication, and ABObject into the Frame
 
 In the mobile framework, the ABMobileApps are located in `/www/lib/app/applications`. Each application has its own subdirectory there. Within each subdirectory, there should at least be a few core files:
 
-- `app.js`: This is the controller that defines how the ABMobileApp will function. This is the controller that initializes ABObjects and ABDataCollections, and keeps a working copy of their data in the ABMobileApp object itself. 
+- `app.js`: This is the controller that defines how the ABMobileApp will function. This is the controller that initializes ABObjects and ABDataCollections, and keeps a working copy of their data in the ABMobileApp object itself.
 
 - `config_app.js`: This is basically a data dump of the ABApplication's row from the server database. The mobile framework will reference its `json` property.
 
 - `routes.js`: This defines the Framework7 page routing for the ABApplication on the mobile device. Typically, the routes will point to .html files in the `templates` subdirectory for the various component pages.
 
-There are also various other files for managing the various ABObject types used by the application. For example, the Events application has `objEvent.js`, `objRegistration.js`, `objSubEvent.js`, and so on. These are all sub classes of `objBase.js`. (I assume that the 'obj' refers to their purpose of controlling ABObject data.) 
+There are also various other files for managing the various ABObject types used by the application. For example, the Events application has `objEvent.js`, `objRegistration.js`, `objSubEvent.js`, and so on. These are all sub classes of `objBase.js`. (I assume that the 'obj' refers to their purpose of controlling ABObject data.)
 ```
 /data/www/lib/app/applications/events/objBase.js
 /data/www/lib/app/applications/events/objEvents.js
@@ -147,7 +148,7 @@ There are also various other files for managing the various ABObject types used 
 
 These class objects initialize their data from the ABMobileApp's working copy data. They each have `.createLocal()`, `.updateLocal()`, and `.deleteLocal()` methods that you can use to persist data to local storage. ("And then automatically update the data in the main App".) These objects also have a `.save()` method that will sync the current state of their ABObject data to the ABRelay server. These methods are defined in `objBase.js`, and can be overridden by the sub class.
 
-#### To Do
+### To Do
 
 One of the gotchas we have to work around right now is that ABObject data primary key `id` values are only generated on the server when the object is first saved. ABObjects often have connections with other ABObjects within the same application, and they reference each other by their `id`. The problem arises when you have to create a bunch of related objects on the mobile app at the same time. Their `id` values are not known until they are saved to the server, but they still need to reference their related objects somehow. So the mobile clients add a client-generated `uuid` field to the ABObject data, and keep everything connected using that. However, we have to do a little dance with the server to submit a base record, then receive its `id` value, and then update all the connected objects with that record's `id`. This is one of the first things Johnny wants to change in the framework once we get a chance.
 
@@ -160,10 +161,10 @@ In the `/www/lib/app/applications/events/app.js` you'll see this:
 ```javascript
 // a lookup of our local data and the object .id in our AB json
 var ObjHash = {
-    "Events": "d16ac465-5a1f-429e-809c-e3d05d43a2e6", 
-    "Registrations": "8504e326-a0b4-4300-9657-930f4832f6eb", 
-    "Registrants": "e0b32645-71d1-451b-8de0-40cb4b6e5ae7", 
-    "Charges": "ae08ab76-9202-4346-9738-31a7af2cfece", 
+    "Events": "d16ac465-5a1f-429e-809c-e3d05d43a2e6",
+    "Registrations": "8504e326-a0b4-4300-9657-930f4832f6eb",
+    "Registrants": "e0b32645-71d1-451b-8de0-40cb4b6e5ae7",
+    "Charges": "ae08ab76-9202-4346-9738-31a7af2cfece",
     "Fees": "b4df10a0-cffc-4578-8b39-742641042acd",
     "SubEvents": "fe0f5a03-096e-49fd-9884-51e59e2b3955",
     "Schedules" : "4351f546-66e5-4354-be35-d16bb30bb837",
@@ -184,14 +185,14 @@ initializeLocalData() {
     for (var o in ObjHash) {
         allOperations.push(this.lookupData(ObjHash[o], o));
     }
-    
+
     return Promise.all(allOperations);
 }
 ```
-    
+
 
 During this process, each key in the `this.lookupData(id, key)` then becomes a:  
-- `App.obj[Key]`: reference to the ABObject 
+- `App.obj[Key]`: reference to the ABObject
 - `App.data[Key]`: reference to the local data for this ABObject
 - `App.get[Key]`: returns the local data
 - `App.refresh[Key]`: a method to reload the data from local storage
@@ -217,7 +218,7 @@ Now the `.initializeRemoteData()` function is supposed to initiate a call to the
 
 So, we take those tables that are expected to be fully downloaded, and request a full download of those:
 ```javascript
-// these are the system data objects we need to just get all the 
+// these are the system data objects we need to just get all the
 // data from:
 var remoteLookupObjects = ['Events', 'Fees', 'SubEvents'];
 remoteLookupObjects.forEach((rlo)=>{
@@ -268,9 +269,5 @@ So, if you wanted to follow this same pattern, I'd start by:
 
 Note, this is two seperate movements
 user's QR code from Server to Mobile
-Server's list of Data collections from Server to Mobile
+Server's list of Data collections from Server to Mobile\
 ![alt_text](connectapptoserver.jpeg "image_tooltip")
-
-
-
-[< Mobile](../Mobile.md)    

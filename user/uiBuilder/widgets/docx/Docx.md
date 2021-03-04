@@ -1,12 +1,13 @@
-[< Widgets](../Widgets.md)
-
-# Docx Builder
+---
+category: widgets
+title: Docx Builder
+---
 
 Adds a button to download a custom report made using a docx template.
 
 ## Templates
 
-We use [docxtemplater](https://docxtemplater.com/) to create the the reports.
+We use [docxtemplater](https://docxtemplater.com/) to create the reports.
 
 ### Basic Use
 
@@ -22,7 +23,7 @@ Create a loop:
 ```
 
 Insert an image:\
-`{%image field}`
+`{% raw  %}{%image field}{% endraw  %}`
 
 Insert the Sum of a field:\
 `{$sum?number field}`

@@ -1,7 +1,8 @@
-[< Widgets](../Widgets.md)
-
-# Carousel
-
+---
+category: widgets
+title: Carousel
+description: Display a set of images
+---
 This widget allows a set of image to be displayed one at a time, allowing user to cycle through them.
 
 ## Properties
