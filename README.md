@@ -1,17 +1,6 @@
-# AppBuilder
+# AppBuilder Docs
+Documentation for [appdevdesigns/app_builder](https://github.com/appdevdesigns/app_builder).
 
-Our AppBuilder is a development framework our team uses to produce applications.
+This includes both user (creating apps) and developer docs.
 
-## Developers
-
-[Help develop AppBuilder](develop/Develop.md).
-
-## Creating Applications
-
-[Learn how to use AppBuilder to create Apps](user/Index.md).
-
----
-
-## Adding Documentation
-
-[How to contribute to AppBuilder Docs](CONTRIBUTING.md)
+**View on GitHub Pages:** https://appdevdesigns.github.io/appbuilder_docs/
