@@ -1,7 +1,7 @@
 ---
 title: Add Child
-description: 
-category: 
+description: How to add child, and check data
+category: CARs Module
 ---
 
 the system expect records to be connected in order to build DOCx reports.
