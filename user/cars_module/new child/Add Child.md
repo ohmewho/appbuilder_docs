@@ -17,5 +17,15 @@ This is a fully filled out report document, you can compare to your result to kn
 |  |(intake) Basic Health Info|(intake) Physical details	|	|||
 |  |> (intake) vaccination 	|			||||
 
+These allow us to download this report
 
-![](images/op_roles.png)
+![](images/getreport.jpg)
+
+Now! it is possible to download this report simply with the 
+
+[+] Add Children
+
+button on the children page.
+
+
+But blank fields will be shown on that report. 
