@@ -16,20 +16,24 @@ then what reports you can expect to generate.
 ## Adding Projects 
 
 Because of the way we set up our system, even single-home setups will need to have this
- TODO
+
+`<TODO update this when project process is adjusted>`
+
  Go into the appbuilder page, CARs, Objects, CARs Projects
+
  Click "add new row" and then put in the name of your project
 ![](images/addprj.jpg)
 
 ## Adding Home
 
 Once you have the project, add a 'home'
+
 This can be done on the front end from the top tab.
 
-![](addhome.jpg)
+![](images/addhome.jpg)
 
 On this form, make sure to select the project you just made.
-![](addhomepopup.jpg)
+![](images/addhomepopup.jpg)
 
 ## Add Homes  Staff 
 Set up user
@@ -42,13 +46,14 @@ Set up user
 ### Create user, permissions
 
 The first stet to allowing staff to access the system is adding login credentials. 
-![](adduser.jpg)
+![](images/adduser.jpg)
 The form should look like this before you're ready to save. 
+
 I recommend telling the user to set their own password once their user is made. 
-![](newuserform.jpg)
+![](images/newuserform.jpg)
 While you're on this screen, type in the user's name (if they aren't on the first page)
 Then open their settings, and give them the "CARs user" scope. This will allow them to (only!) open the cars page on the sidebar. 
-![](addrole.jpg)
+![](images/addrole.jpg)
 
 If you have multiple staff to add, you should repeat this step until they all have logins and system access permissions.
 
@@ -60,7 +65,8 @@ https://appdevdesigns.github.io/appbuilder_docs/user/permissions/roles/Roles.htm
 
 ### add Staff record
 go to this page on the CARs frontend
-![](addstaff.jpg)
+![](images/addstaff.jpg)
 Select the user and project you recently added, 
+
 fill in any other information, and your new staff will be ready to log in and start adding data!
-![](addstaffform.jpg)
+![](images/addstaffform.jpg)
