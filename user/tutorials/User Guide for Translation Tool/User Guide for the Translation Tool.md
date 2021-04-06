@@ -8,13 +8,13 @@
 
 1. Log in to an account with the translation privilege on the dev website.
 
-   ![Step 1](/Users/vincent/Desktop/images/Step 1.png)
+   ![Step 1](https://github.com/ohmewho/appbuilder_docs/blob/master/user/tutorials/User%20Guide%20for%20Translation%20Tool/images/Step%201.png)
 
 2.  After logging in, click on the “Menu” button to choose the app you want to do translation for.
 
-   ![Step 2a](/Users/vincent/Desktop/images/Step 2a.png)
+   ![Step 2a](https://github.com/ohmewho/appbuilder_docs/blob/master/user/tutorials/User%20Guide%20for%20Translation%20Tool/images/Step%202a.png)
 
-   ![Step 2a](/Users/vincent/Desktop/images/Step 2b.png)
+   ![Step 2b](https://github.com/ohmewho/appbuilder_docs/blob/master/user/tutorials/User%20Guide%20for%20Translation%20Tool/images/Step%202b.png)
 
    
 
