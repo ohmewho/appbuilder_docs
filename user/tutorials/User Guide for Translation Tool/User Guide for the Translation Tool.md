@@ -1,8 +1,8 @@
-
-
-| title                               | category | description                             |
-| ----------------------------------- | -------- | --------------------------------------- |
-| User Guide for the Translation Tool | tutorial | Explains how to use the Tranlation Tool |
+---
+title: User Guide for the Translation Tool
+category: tutorial
+description: Explains how to use the Tranlation Tool
+---
 
 # Instructions
 
